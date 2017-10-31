@@ -49,7 +49,7 @@
 
             <div class="col-sm-6">
                   Filename: <br>
-                  <input type="text" name="mainclass" placeholder="data.kt"><br>
+                  <input type="text" id="filename" placeholder="data.kt"><br>
                   <br>
                   <input type="button" value="Generate" onclick="ParseJson();">
               </div>
@@ -99,12 +99,18 @@
             });
 
         function ParseJson() {
-          val = $('#jsontxbox').val();
-          if (val === 'Vijay') {
-            alert(val);
+          val filenameTxtbox = $('#filename').val();
+          if (filenameTxtbox) {
+            val = $('#jsontxbox').val();
+            if (val) {
+              alert(val);
+            }else{
+              alert("invalid json");
+            }
           }else{
-            alert("invalid json");
+            alert("filename mandatory");
           }
+
         }
         </script>
     </body>
